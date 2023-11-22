@@ -56,8 +56,8 @@ test_dataset = RedditDataset(test_encodings, test_labels)
 model = XLNetForSequenceClassification.from_pretrained('xlnet-base-cased', num_labels=6)  # We have 6 classes
 
 training_args = TrainingArguments(
-    per_device_train_batch_size=16,
-    per_device_eval_batch_size=64,
+    per_device_train_batch_size=8,
+    per_device_eval_batch_size=32,
     num_train_epochs=3,
     evaluation_strategy="epoch",
     save_steps=10_000,
